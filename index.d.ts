@@ -5,6 +5,7 @@ export interface RNAccountManagerAccount {
 }
 
 export interface RNAccountManager {
+  getRegisterComponentKey(): Promise<{ value: string }>
   getAccountsByType(accountType: string): Promise<RNAccountManagerAccount[]>
   addAccountExplicitly(accountType: string, userName: string, password: string): Promise<RNAccountManagerAccount>
   removeAccount(accountObject: RNAccountManagerAccount): Promise<{}>
